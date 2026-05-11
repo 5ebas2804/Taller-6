@@ -26,8 +26,10 @@ public class PanelMapaVisualizar extends JPanel
      */
     private List<Restaurante> restaurantes;
 
-    public PanelMapaVisualizar( )
+    public PanelMapaVisualizar(List<Restaurante> restaurantes )
     {
+    	this.restaurantes = restaurantes;
+    	setLayout( new BorderLayout( ) );
         this.labMapa = new JLabel( new ImageIcon( "./imagenes/mapa.png" ) );
         labMapa.setBorder( new LineBorder( Color.DARK_GRAY ) );
         add( labMapa, BorderLayout.CENTER );
@@ -40,6 +42,23 @@ public class PanelMapaVisualizar extends JPanel
         Graphics2D g2d = ( Graphics2D )g;
 
      // TODO completar y hacer que se vean los nombres de todos los restaurantes en el mapa
+        if(restaurantes != null) {
+        	for(Restaurante r : restaurantes) {
+        		int x = r.getX();
+        		int y = r.getY();
+        		String nombre = r.getNombre();
+        		if (r.isVisitado()) {
+        			g2d.setColor(Color.GREEN);}
+        		else {
+        			g2d.setColor( Color.RED );
+        		}
+        		//circulo de coordenadas
+        		g2d.fillOval( x, y, 7, 7 );
+        		//nimbre del restaurante
+        		g2d.setColor( Color.BLACK );
+        		g2d.drawString( nombre, x + 10, y + 8 );
+        	}
+        }
     }
 
     /**

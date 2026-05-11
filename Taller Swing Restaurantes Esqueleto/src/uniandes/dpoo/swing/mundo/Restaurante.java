@@ -53,4 +53,11 @@ public class Restaurante
         return getNombre();
     }
 
+
+	public void setVisitado(boolean visitado) {
+		// TODO Auto-generated method stub
+		this.visitado = visitado;
+		
+	}
+
 }

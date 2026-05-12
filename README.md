@@ -8,7 +8,7 @@ el nombre del restaurante, la calificación (1-5), y si esta o no visitado.
 
 Ver Restaurante: Se muestra una ventana, con todos los restaurantes, donde se separan por color, siendo
 los verdes los que ya se han visitado y los rojos los que faltan por visitar, ademas de un filtro para mostar 
-unicamente los visitados o no
+unicamente los visitados o no.
 
 
 
